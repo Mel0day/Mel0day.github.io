@@ -5,13 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="Keywords" content="blog"/>
     <meta name="Description" content="blog"/>
-    <title>My 0xFF world</title>
+    <title>Hot blog</title>
     <link rel="shortcut icon" href="/static/favicon.png"/>
     <link rel="stylesheet" type="text/css" href="main.css" />
 </head>
 <body>
-
-
 <div class="main">
     <div class="header">
         <ul id="pages">
@@ -30,17 +28,13 @@
         <h1>
         <a href="/" id="title"></a>
         </h1>
-        <h2 id=shortDesc>Talk is cheap, Show me the money.</h2>
     </div>
     <div class="innermain" id="main">
     </div>
     <div class="footer">
-        <a href="/editor">↖</a>
-        <a href="/editor">(▔▽▔)</a>
-        <a href="/alllinks.html">↗</a>
+        <p>footer</p>
     </div>
 </div>
-
 <script src="main.js"></script>
 <script id="itemTemplate" type="text/mustache">
     {{#posts}}
@@ -52,13 +46,13 @@
         </div>
         <div class="title">
             <h2>
-                <a href="posts/{{path}}">{{title}}</a>
+                <a href="{{path}}">{{title}}</a>
             </h2>
         </div>
     </div>
     {{/posts}}
     <ul class="pages">
-		<!--Pages:-->
+        Pages:
         {{#pages}}
             <li>
             {{#select}}
@@ -77,7 +71,7 @@
     {{#posts}}
     <div class="archive">
     <span>{{date}}</span>
-    <a href="posts/{{path}}">{{title}}</a>
+    <a href="{{path}}">{{title}}</a>
     </div>
     {{/posts}}
     {{/group}}
@@ -85,16 +79,15 @@
 <script id="pagesTemplate" type="text/mustache">
     {{#pages}}
     <li>
-        <a href="posts/{{path}}">{{title}}</a>
+        <a href="{{path}}">{{title}}</a>
     </li>
     {{/pages}}
 </script>
-<!--tag page is below-->
 <script id="tagsTemplate" type="text/mustache">
     <ul style="list-style: none">
         {{#tags}}
         <li style="display:inline; margin: 15px;">
-            <a id="tagInTagPage" href="{{path}}" style="font-size: {{size}}%">{{name}}</a>
+            <a href="{{path}}" style="font-size: {{size}}%">{{name}}</a>
         </li>
         {{/tags}}
     </ul>
@@ -114,7 +107,7 @@ $(document).ready(function() {
                     return 1;
                 return 0;
             });
-            //console.log(data.posts);
+            console.log(data.posts);
             var per = data.number_of_posts_per_page;
             var n = data.posts.length;
             var num = Math.floor((n-1)/per)+1;
